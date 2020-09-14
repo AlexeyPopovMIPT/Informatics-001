@@ -1,6 +1,6 @@
-﻿#include <stdio.h>
+﻿#include <assert.h>
 #include <math.h>
-#include <assert.h>
+#include <stdio.h>
 
 #define INF 4
 #define ACCURACY 1e-9
@@ -186,6 +186,7 @@ void SolveLinearEquation_test(void) {
             printf("\x1b[37;42m" "Test %d OK\n" "\x1b[0m",
                                        i);
     }
+    printf("\x1b[0m");
 
 }
 
@@ -226,5 +227,6 @@ void SolveSquareEquation_test(void) {
             printf("\x1b[37;42m" "Test %d OK\n",
                                        i);
     }
+    printf("\x1b[0m");
 
 }
