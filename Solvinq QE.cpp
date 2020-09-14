@@ -104,7 +104,7 @@ int main()
         break;
 
     default:
-        printf("\x1b[37;41m" "Error code %d\n" "\x1b[0m", nRoots);
+        printf("Error code %d\n", nRoots);
 
     }
 
