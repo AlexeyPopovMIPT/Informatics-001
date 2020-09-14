@@ -39,7 +39,7 @@ int SolveSquareEquation(double a, double b, double c, double* x1, double* x2) {
         return SolveLinearEquation(b, c, x1);
     if (IsZero(c) && !IsZero(b))
     {
-        if (x1) *x1 = 0;
+        if (x1) *x1 = 0; //Здесь и везде ниже if(double*) вставлены, чтобы избежать ворнинга
         return 1 + SolveLinearEquation(a, b, x2);
     }
 
@@ -51,9 +51,9 @@ int SolveSquareEquation(double a, double b, double c, double* x1, double* x2) {
     if (d < 0)
         return 0;
 
-    double sqrtd = sqrt(d);
-    if (x1) *x1 = (-b - sqrtd) / 2 / a;
-    if (x2) *x2 = (-b + sqrtd) / 2 / a;
+    double q = (b >= 0) ? (-b - sqrt(d)) / 2 : (-b + sqrt(d)) / 2;
+    if (x1) *x1 = q / a;
+    if (x2) *x2 = c / q;
     return 2;
 }
 
@@ -214,7 +214,7 @@ void SolveSquareEquation_test(void) {
         }
 
         else if (n == 2) {
-            if(IsZero(x1 - x1s[i]) && IsZero(x2 - x2s[i]))// || IsZero(x2 - x1s[i]) && IsZero(x1 - x2s[i]))
+            if(IsZero(x1 - x1s[i]) && IsZero(x2 - x2s[i]) || IsZero(x2 - x1s[i]) && IsZero(x1 - x2s[i]))
                 printf("\x1b[37;42m" "Test %d OK\n",
                                            i);
             else
