@@ -1,4 +1,21 @@
-﻿#include <assert.h>
+/*
+
+
+
+КОД УЖЕ РЕВЬЮИЛ ДЕД, ЗАПРОС ПРОИГНОРИРОВАТЬ
+
+
+
+
+
+
+
+*/
+
+
+
+
+#include <assert.h>
 #include <math.h>
 #include <stdio.h>
 
